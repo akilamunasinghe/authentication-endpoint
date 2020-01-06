@@ -63,16 +63,20 @@
 
 <script>
     function setCookie() {
-        var locale = document.getElementById("lnkChangeLanguage").getAttribute("lang");
-        document.cookie = "lang=" + locale + "; path=/;";
-        location.reload();
-    }
+            var locale = document.getElementById("lnkChangeLanguage").getAttribute("lang");
+            document.cookie = "lang=" + locale + "; path=/;";
+            location.reload();
+        }
 
-    function setCookieByParam() {
-        var urlParams = new URLSearchParams(window.location.search);
-        var locale = urlParams.get("lang");
-        document.cookie = "lang=" + locale + "; path=/;";
-    }
+        function setCookieByParam() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var locale = urlParams.get("lang");
+            if (locale) {
+                document.cookie = "lang=" + locale + "; path=/;";
+            }
+        }
+
+
 </script>
 <!-- header -->
 <header class="header header-default">
